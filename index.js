@@ -31,7 +31,13 @@ async function run() {
 const productsCollection = client.db("jobtask").collection("products")
 
 app.get('/products', async(req,res) =>{
-    const result  = await productsCollection.find().toArray()
+  const filter = req.query
+  console.log(filter)
+  const query = {
+    phoneName: {$regex: filter.search}
+  }
+  const courser = productsCollection.find(query)
+    const result  = await courser.toArray()
     res.send(result)
 })
 
