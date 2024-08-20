@@ -34,7 +34,7 @@ app.get('/products', async(req,res) =>{
   const filter = req.query
   console.log(filter)
   const query = {
-    phoneName: {$regex: filter.search}
+    phoneName: {$regex: filter.search, $options: "i"}
   }
   const courser = productsCollection.find(query)
     const result  = await courser.toArray()
