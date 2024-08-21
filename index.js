@@ -48,11 +48,6 @@ app.get('/products', async(req,res) =>{
     res.send(result)
 })
 
-bbffdsfiuerfj
-dhbfkghbkudhrfherg
-kbdgkfbgkhuer
-bdkfgikuhgorg
-brghoger
 
 
 
